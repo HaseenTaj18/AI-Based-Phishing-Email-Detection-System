@@ -1,0 +1,137 @@
+body {
+    background: linear-gradient(135deg, #1c1f2b, #2b5876);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #fff;
+    width: 580px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #2b5876;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.loader {
+    display: none;
+    margin: 20px auto;
+    width: 28px;
+    height: 28px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #2b5876;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.result.safe { background: #e6fffa; }
+.result.phishing { background: #ffe6e6; }
+
+.confidence {
+    height: 10px;
+    background: #ddd;
+    margin: 10px 0;
+}
+
+#confidence-bar {
+    height: 100%;
+    width: 0%;
+}
+
+.soc {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #f7fafc;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.highlight-box {
+    background: #f7fafc;
+    padding: 10px;
+}
+
+mark {
+    background: #feb2b2;
+}
+
+.hidden {
+    display: none;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.action-card {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    border-left: 5px solid #2b5876;
+}
+
+.action-card.phishing {
+    border-left-color: #e53e3e;
+}
+
+.action-card.safe {
+    border-left-color: #38b2ac;
+}
+
+.action-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: #2b5876;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

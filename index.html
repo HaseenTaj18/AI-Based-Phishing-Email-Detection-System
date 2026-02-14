@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOC Email Threat Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Email Threat Analyzer</h1>
+    <p class="subtitle">SOC-ready explainable phishing detection</p>
+
+    <label>Subject</label>
+    <input id="subject">
+
+    <label>Email Body</label>
+    <textarea id="body" rows="6"></textarea>
+
+    <button onclick="analyze()">Analyze</button>
+
+    <div class="loader" id="loader"></div>
+
+    <div id="result" class="result hidden">
+        <h2 id="status"></h2>
+
+        <div class="soc">
+            <div><strong>Status:</strong> <span id="soc-status"></span></div>
+            <div><strong>Risk Level:</strong> <span id="soc-risk"></span></div>
+            <div><strong>Confidence:</strong> <span id="soc-confidence"></span></div>
+        </div>
+
+        <div class="confidence">
+            <div id="confidence-bar"></div>
+        </div>
+
+        <div id="phishing-only" class="hidden">
+
+            <h3>Highlighted Suspicious Content</h3>
+            <div id="highlighted-text" class="highlight-box"></div>
+
+            <h3>Top Risky Keywords</h3>
+            <canvas id="riskChart"></canvas>
+
+            <h3>Word Heatmap</h3>
+            <canvas id="heatmapChart"></canvas>
+
+        </div>
+
+        <h3>Automated Response Actions</h3>
+        <div id="auto-actions" class="actions-grid"></div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
